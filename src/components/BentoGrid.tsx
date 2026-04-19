@@ -1,25 +1,6 @@
-import { motion } from 'framer-motion';
 import { Gauge, Camera, Crown, Hexagon, Component, LayoutTemplate } from 'lucide-react';
-import { cn } from '../utils/cn';
 
-function BentoCard({ children, className, delay = 0 }: { children: React.ReactNode, className?: string, delay?: number }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6, delay }}
-      className={cn(
-        "p-10 rounded-[2rem] bg-white dark:bg-obsidian border border-gray-200/50 dark:border-white/5",
-        "hover:shadow-2xl hover:shadow-electric-cobalt/5 dark:hover:shadow-electric-cobalt/5 transition-shadow duration-500",
-        "relative overflow-hidden group",
-        className
-      )}
-    >
-      {children}
-    </motion.div>
-  );
-}
+import { SpotlightCard } from './SpotlightCard';
 
 export function BentoGrid() {
   return (
@@ -32,7 +13,7 @@ export function BentoGrid() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
         
         {/* Feature 1: Performance Engineering */}
-        <BentoCard className="md:col-span-8 bg-gradient-to-br from-white to-gray-50 dark:from-obsidian dark:to-[#050505]" delay={0.1}>
+        <SpotlightCard className="md:col-span-8 bg-gradient-to-br from-white to-gray-50 dark:from-obsidian dark:to-[#050505]" delay={0.1}>
           <div className="absolute -right-20 -bottom-20 opacity-[0.03] dark:opacity-5 transition-transform group-hover:scale-110 duration-1000">
             <Gauge className="w-96 h-96 text-electric-cobalt" />
           </div>
@@ -68,10 +49,10 @@ export function BentoGrid() {
               </div>
             </div>
           </div>
-        </BentoCard>
+        </SpotlightCard>
 
         {/* Feature 2: Visual Identity */}
-        <BentoCard className="md:col-span-4" delay={0.2}>
+        <SpotlightCard className="md:col-span-4" delay={0.2}>
           <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full bg-deep-navy/10 dark:bg-white/10 text-deep-navy dark:text-white text-xs font-bold uppercase tracking-widest">
             02. Branding
           </div>
@@ -87,10 +68,10 @@ export function BentoGrid() {
               <Hexagon className="w-8 h-8 text-electric-cobalt" />
             </div>
           </div>
-        </BentoCard>
+        </SpotlightCard>
 
         {/* Feature 3: Motion & Stills */}
-        <BentoCard className="md:col-span-4 overflow-hidden p-0" delay={0.3}>
+        <SpotlightCard className="md:col-span-4 overflow-hidden p-0" delay={0.3}>
           <div className="p-10 relative z-10 h-full flex flex-col bg-deep-navy text-white">
             <div className="absolute inset-0 bg-gradient-to-t from-obsidian/90 to-transparent z-0" />
             
@@ -109,10 +90,10 @@ export function BentoGrid() {
               </div>
             </div>
           </div>
-        </BentoCard>
+        </SpotlightCard>
 
         {/* Feature 4: The Lab */}
-        <BentoCard className="md:col-span-8 bg-gray-50 dark:bg-[#111] border-none" delay={0.4}>
+        <SpotlightCard className="md:col-span-8 bg-gray-50 dark:bg-[#111] border-none" delay={0.4}>
           <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 rounded-full bg-deep-navy/10 dark:bg-white/10 text-deep-navy dark:text-white text-xs font-bold uppercase tracking-widest">
             04. The Lab
           </div>
@@ -136,7 +117,7 @@ export function BentoGrid() {
               </p>
             </div>
           </div>
-        </BentoCard>
+        </SpotlightCard>
 
       </div>
     </section>

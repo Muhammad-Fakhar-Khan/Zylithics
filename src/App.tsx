@@ -1,23 +1,24 @@
+import { Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { BentoGrid } from './components/BentoGrid';
-import { CaseStudies } from './components/CaseStudies';
-import { Marquee } from './components/Marquee';
-import { Process } from './components/Process';
-import { Contact } from './components/Contact';
+import { Home } from './pages/Home';
+import { CustomWeb } from './pages/CustomWeb';
+import { WordPress } from './pages/WordPress';
+import { Branding } from './pages/Branding';
+import { Video } from './pages/Video';
 
 function App() {
   return (
-    <div className="min-h-screen selection:bg-electric-cobalt/30 selection:text-obsidian dark:selection:text-white">
+    <div className="min-h-screen selection:bg-electric-cobalt/30 selection:text-obsidian dark:selection:text-white flex flex-col">
       <Navbar />
-      <main>
-        <Hero />
-        <Marquee />
-        <BentoGrid />
-        <CaseStudies />
-        <Process />
-        <Contact />
-      </main>
+      <div className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/custom-web" element={<CustomWeb />} />
+          <Route path="/wordpress" element={<WordPress />} />
+          <Route path="/branding" element={<Branding />} />
+          <Route path="/video" element={<Video />} />
+        </Routes>
+      </div>
       
       <footer className="py-12 text-center border-t border-gray-200 dark:border-white/5 bg-gray-50 dark:bg-[#080808]">
         <p className="text-gray-500 dark:text-gray-400 text-sm font-medium tracking-widest uppercase">
