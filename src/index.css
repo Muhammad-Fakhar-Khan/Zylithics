@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 transition-colors duration-300 font-sans antialiased;
+  }
+  .dark body {
+    @apply bg-obsidian text-gray-100;
+  }
+}
+
+.speed-gauge-path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: fillGauge 1.5s ease-out forwards;
+}
+
+@keyframes fillGauge {
+  to {
+    stroke-dashoffset: 15;
+  }
+}
