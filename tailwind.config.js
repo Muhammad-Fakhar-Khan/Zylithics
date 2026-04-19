@@ -8,9 +8,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        'obsidian': '#0B0C10',
-        'cobalt': '#1F4287',
-        'cobalt-light': '#278EA5',
+        'obsidian': '#0A0A0A',
+        'obsidian-light': '#F9FAFB',
+        'cobalt': '#2E5BFF',
+        'electric-cobalt': '#2E5BFF',
+        'deep-navy': '#1E3A8A',
+        'cobalt-light': '#1E3A8A',
         'cyan-accent': '#21E6C1'
       },
       fontFamily: {
